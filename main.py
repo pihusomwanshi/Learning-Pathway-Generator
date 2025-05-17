@@ -23,10 +23,15 @@ client = AzureOpenAI()
 # Create FastAPI instance
 app = FastAPI()
 
+# Explicitly allow your frontend origin
+origins = [
+    "https://tourmaline-cocada-0a58a7.netlify.app"
+]
+
 # Allow frontend (React app) to communicate with backend (FastAPI)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     # ["https://tourmaline-cocada-0a58a7.netlify.app"],  # Specify React frontend URL
     #allow_origins=["http://localhost:3000"]
     allow_credentials=True,
