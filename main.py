@@ -26,7 +26,8 @@ app = FastAPI()
 # Allow frontend (React app) to communicate with backend (FastAPI)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://tourmaline-cocada-0a58a7.netlify.app/"],  # Specify React frontend URL
+    allow_origins=["*"],
+    # ["https://tourmaline-cocada-0a58a7.netlify.app"],  # Specify React frontend URL
     #allow_origins=["http://localhost:3000"]
     allow_credentials=True,
     allow_methods=["*"],
